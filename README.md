@@ -6,4 +6,4 @@
 
 **Beta Features Video AI**
 
-Setting up a local database that allows a Video Intelligence REST API for analyzing and training AutoML models.
+Setting up a local database to manage video metadata and integrate with the Video Intelligence REST API for analysis and to support training AutoML models.
