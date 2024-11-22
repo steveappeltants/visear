@@ -1,4 +1,4 @@
-# Travel App
+# VisearApp
 
 A new Flutter project.
 

@@ -28,13 +28,13 @@ class CustomAuthManager {
     uid = null;
 
     // Update the current user.
-    travelAppAuthUserSubject.add(
-      TravelAppAuthUser(loggedIn: false),
+    visearAppAuthUserSubject.add(
+      VisearAppAuthUser(loggedIn: false),
     );
     persistAuthData();
   }
 
-  Future<TravelAppAuthUser?> signIn({
+  Future<VisearAppAuthUser?> signIn({
     String? authenticationToken,
     String? refreshToken,
     DateTime? tokenExpiration,
@@ -66,7 +66,7 @@ class CustomAuthManager {
     );
   }
 
-  TravelAppAuthUser? _updateCurrentUser({
+  VisearAppAuthUser? _updateCurrentUser({
     String? authenticationToken,
     String? refreshToken,
     DateTime? tokenExpiration,
@@ -78,11 +78,11 @@ class CustomAuthManager {
     this.uid = authUid;
 
     // Update the current user stream.
-    final updatedUser = TravelAppAuthUser(
+    final updatedUser = VisearAppAuthUser(
       loggedIn: true,
       uid: authUid,
     );
-    travelAppAuthUserSubject.add(updatedUser);
+    visearAppAuthUserSubject.add(updatedUser);
     persistAuthData();
     return updatedUser;
   }
@@ -109,11 +109,11 @@ class CustomAuthManager {
     final authTokenExists = authenticationToken != null;
     final tokenExpired =
         tokenExpiration != null && tokenExpiration!.isBefore(DateTime.now());
-    final updatedUser = TravelAppAuthUser(
+    final updatedUser = VisearAppAuthUser(
       loggedIn: authTokenExists && !tokenExpired,
       uid: uid,
     );
-    travelAppAuthUserSubject.add(updatedUser);
+    visearAppAuthUserSubject.add(updatedUser);
   }
 
   void persistAuthData() {
@@ -131,5 +131,5 @@ class CustomAuthManager {
   }
 }
 
-TravelAppAuthUser? currentUser;
+VisearAppAuthUser? currentUser;
 bool get loggedIn => currentUser?.loggedIn ?? false;

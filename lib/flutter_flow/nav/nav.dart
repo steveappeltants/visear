@@ -26,8 +26,8 @@ class AppStateNotifier extends ChangeNotifier {
   static AppStateNotifier? _instance;
   static AppStateNotifier get instance => _instance ??= AppStateNotifier._();
 
-  TravelAppAuthUser? initialUser;
-  TravelAppAuthUser? user;
+  VisearAppAuthUser? initialUser;
+  VisearAppAuthUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -52,7 +52,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(TravelAppAuthUser newUser) {
+  void update(VisearAppAuthUser newUser) {
     final shouldUpdate =
         user?.uid == null || newUser.uid == null || user?.uid != newUser.uid;
     initialUser ??= newUser;

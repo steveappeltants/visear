@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
 
-  late Stream<TravelAppAuthUser> userStream;
+  late Stream<VisearAppAuthUser> userStream;
 
   @override
   void initState() {
@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
-    userStream = travelAppAuthUserStream()
+    userStream = visearAppAuthUserStream()
       ..listen((user) {
         _appStateNotifier.update(user);
       });
@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: 'Travel App',
+      title: 'VisearApp',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
