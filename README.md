@@ -18,7 +18,7 @@ Setting up a local database to manage video metadata and integrate with the Vide
 Using Visual Studio Code VSC  
 1. Run your project from the command line [dbt-core installation overview](https://docs.getdbt.com/docs/core/installation-overview) 
 
-![Data transformation scheme](../visear/assets/db-architecture/DataTransformScheme.png)
+![Data transformation scheme](/assets/db-architecture/DataTransformScheme.png)
 
 ## [Install dbt core ](https://docs.getdbt.com/docs/core/installation-overview#install-dbt-core)  
 ### Install with pip
